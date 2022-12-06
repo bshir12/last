@@ -1,8 +1,10 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { TombolKembali  } from "@components";
 
+
 const PenjelasanProduct = () => {
+
   const navigate = useNavigate();
   return (
     <>

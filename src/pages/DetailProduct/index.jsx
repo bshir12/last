@@ -1,10 +1,12 @@
 import React from 'react'
-import { PenjelasanProduct, Header, Footer} from "@components";
+import { PenjelasanProduct, Header, Footer, FooterIklan} from "@components";
 
 const DetailProduct = () => {
+
   return (
     <>
     <Header />
+    <FooterIklan/>
     <PenjelasanProduct/>
     <Footer/>
     </>
