@@ -15,7 +15,8 @@ const Payment = () => {
   return (
     <>
       <Header />
-      <div className="flex flex-wrap justify-center">
+      <div className="text-center rounded-md mx-20 mt-6 text-3xl font-bold text-orange-500 font-[poppins]">Payment</div>
+      <div className="flex flex-wrap justify-center my-12 ">
         <ul
           className="flex list-none flex-wrap pt-3 pb-4 flex-row"
           role="tablist"
@@ -25,8 +26,8 @@ const Payment = () => {
               className={
                 "text-xs font-bold h-24 px-5 py-3 shadow-lg rounded block leading-normal " +
                 (openTab === 1
-                  ? "text-white bg-secondary"
-                  : "text-black bg-primary")
+                  ? "text-white bg-orange-500"
+                  : "text-black bg-white")
               }
               onClick={(e) => {
                 e.preventDefault();
@@ -44,8 +45,8 @@ const Payment = () => {
               className={
                 "text-xs h-24 font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal " +
                 (openTab === 2
-                  ? "text-white bg-secondary"
-                  : "text-black bg-primary")
+                  ? "text-white bg-orange-500"
+                  : "text-black bg-white")
               }
               onClick={(e) => {
                 e.preventDefault();
@@ -63,8 +64,8 @@ const Payment = () => {
               className={
                 "text-xs font-bold h-24 uppercase px-5 py-3 shadow-lg rounded block leading-normal " +
                 (openTab === 3
-                  ? "text-white bg-secondary"
-                  : "text-black bg-primary")
+                  ? "text-white bg-orange-500"
+                  : "text-black bg-white")
               }
               onClick={(e) => {
                 e.preventDefault();
@@ -78,34 +79,34 @@ const Payment = () => {
             </a>
           </li>
         </ul>
-        <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded">
+        <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 rounded">
           <div className="px-4 py-5 flex-auto text-center">
             <div className="tab-content tab-space">
               <div className={openTab === 1 ? "block" : "hidden"} id="link1">
-                <div className="border rounded-md mx-20 shadow-xl">
+                <div className="border rounded-md mx-20 shadow-xl mt-6 font-[poppins]">
                   <p className="text-4xl">127 987 3211</p>
-                  <Upload/>
+                  
                 </div>
               </div>
               <div className={openTab === 2 ? "block" : "hidden"} id="link2">
-                <div className="border rounded-md mx-20 shadow-xl">
+                <div className="border rounded-md mx-20 shadow-xl mt-6 font-[poppins]">
                   <p className="text-4xl">9981 356 817 113</p>
-                  <Upload/>
+                
                 </div>
               </div>
               <div className={openTab === 3 ? "block" : "hidden"} id="link3">
-                <div className="border rounded-md mx-20 shadow-xl">
+                <div className="border rounded-md mx-20 shadow-xl mt-6 font-[poppins] ">
                   <p className="text-4xl">567 227 999 732 456</p>
-                  <Upload/>
+                  
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div>
+      <div className="py-3 mx-auto text-center">
         <button 
-          className="bg-blue-400 text-white active:bg-blueGray-600 text-sm font-bold uppercase px-6 py-3 rounded shadow w-full hover:bg-blue-500"
+          className="bg-orange-500 text-white border border-orange-500 font-[poppins] active:bg-blueGray-600 text-sm font-bold uppercase px-6 py-3 rounded shadow mx-auto hover:bg-orange-700"
           type="button"
           onClick={() => navigate('/profile')}
           >

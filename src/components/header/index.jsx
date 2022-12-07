@@ -1,27 +1,38 @@
-import React from 'react';
+import React from "react";
 import { useNavigate } from "react-router-dom";
-import { Button } from 'antd';
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const navigate = useNavigate();
   return (
-    <div className="bg-white shadow-xl hover:bg-fixed rounded-b-xl">
-      <div className="flex justify-between">
-      <img src={require("./img/logo-indivara.png")} alt='logo' width="130px" height="85px"></img>
-          <div className="brand">
-          </div>
+    <div className="md-flex justify-between items-center mx-auto shadow-lg ">
+      <div className="flex justify-between p-2">
+        <div className="pl-6 ">
+          <img className="w-[150px]  h-auto"
+            src={require("./img/logo-indivara.png")}
+            alt="logo"
+          />
+        </div>
+        <div>
           <ul className="flex mt-3 mr-3">
-            <li className='mr-5'><Button 
-            type="primary"
-            onClick={() => navigate(`/listproduct`)} 
-            >List Product</Button></li>
-            <li className='mr-7'><Button 
-            onClick={() => navigate(`/login`)}
-            >Login</Button></li>
+            <li className="mr-5">
+              <Link to={"/listproduct"}>
+              <button className="border text-black py-1 px-6 rounded-md hover:bg-orange-700 hover:text-white  ">
+                List Product
+              </button>
+              </Link>
+             
+            </li>
+            <li className="mr-7">
+              <Link to={"/login"}>
+              <button className="bg-orange-500 text-white py-1 px-6 rounded-md hover:bg-orange-700">Login</button>
+              </Link>
+            </li>
           </ul>
         </div>
-        </div>
-        );
+      </div>
+    </div>
+  );
 };
 
-        export default Header;
+export default Header;

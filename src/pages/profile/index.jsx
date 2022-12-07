@@ -6,7 +6,7 @@ const Profile = () => {
   return (
     <>
       <Header />
-      <div className="bg-slate-400 m-6 rounded-lg h-60">
+      <div className="bg-orange-500 m-6 rounded-lg h-60">
         <div className="flex justify-left">
           <img
             className=" w-48 h-48 ml-12 mt-5 rounded-full border "
@@ -17,7 +17,7 @@ const Profile = () => {
           <div className="block ml-9 mt-4">
             {/* Full Name */}
             <div>
-              <label className="form-label inline-block mb-2 text-gray-700">
+              <label className="form-label inline-block mb-2 text-white">
                 Nama Lengkap
               </label>
             </div>
@@ -33,7 +33,7 @@ const Profile = () => {
             </div>
             {/* Phone Number */}
             <div>
-              <label className="form-label inline-block mb-2 text-gray-700">
+              <label className="form-label inline-block mb-2 text-white">
                 Phone Number (+62)
               </label>
             </div>
@@ -45,7 +45,7 @@ const Profile = () => {
             </div>
             {/* Alamat */}
             <div>
-              <label className="form-label inline-block mb-2 text-gray-700">
+              <label className="form-label inline-block mb-2 text-white">
                 Alamat
               </label>
             </div>
@@ -70,33 +70,10 @@ const Profile = () => {
           </div>
         </div>
       </div>
-      {/* Assuransi */}
+      
       <div>
         <div className="shadow-2xl border-b-2 m-5 rounded-lg text-center font-bold text-2xl">
-          Produk Asuransi Anda
-        </div>
-        <div className="bg-slate-400 mb-5 m-5 h-36 rounded-lg">
-          <input
-            className="w-80 h-16 m-12 text-center bg-cyan-800 rounded-md text-base"
-            placeholder="Asuransi Kesehatan (BCA Assurance)"
-            disabled
-          />
-          <input
-            className="w-80 h-16 m-12 text-center bg-cyan-800 rounded-md text-base"
-            placeholder="Asuransi Jiwa (BRI Assurance)"
-            disabled
-          />
-          <input
-            className="w-80 h-16 m-12 text-center bg-cyan-800 rounded-md text-base"
-            placeholder="Asuransi Pendidikan (Mandiri Assurance)"
-            disabled
-          />
-        </div>
-      </div>
-      {/* Assuransi */}
-      <div>
-        <div className="shadow-2xl border-b-2 m-5 rounded-lg text-center font-bold text-2xl">
-          Wishlist anda Anda
+        Produk Asuransi Anda
         </div>
         <CardProduk />
       </div>

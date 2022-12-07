@@ -22,7 +22,7 @@ const CardJiwa = () => {
 
   return (
     <>
-      <div className='grid grid-rows-auto grid-cols-3 gap-4'>
+      <div className='grid grid-rows-auto grid-cols-3 gap-4' >
         {users.map(produk => (
           <div key={produk.id}>
             <div className='w-72 h-80 rounded-lg border shadow-xl bg-sky-400 border-slate-500'>

@@ -9,7 +9,7 @@ const TombolPenjelasan = () => {
       <button
         className="bg-blue-400 text-white active:bg-blueGray-600 text-sm font-bold uppercase px-6 py-3 rounded shadow w-full hover:bg-blue-500"
         type="button"
-        onClick={() => navigate(`/detailproduct/${onClick}`)}
+        onClick={() => navigate(`/detailproduct`)}
         >
         Ingin tahu!!!!
       </button>
