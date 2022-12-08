@@ -1,74 +1,84 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
-import {Header} from '@components'
+// import React from 'react';
+// import { Link } from 'react-router-dom';
+// import { connect } from 'react-redux';
 
-export default function Login() {
-  const navigate = useNavigate();
-  return (
-    <>
-    <Header/>
-            <div className="mx-auto mt-14 lg:w-4/12 px-4 relative flex flex-col w-full mb-6 shadow-xl shadow-gray-500 rounded-lg bg-slate-100 ">
-              <div className="rounded-t mb-0 px-6 py-6">
-                <div className="text-center mb-3">
-                  <h3 className="text-blueGray-500 text-sm font-bold">
-                    Log In
-                  </h3>
-                </div>
-                
-                <hr className="mt-6 border-b-1 border-blueGray-300" />
-              </div>
-              <div className="flex-auto px-4 lg:px-10 py-10 pt-0">
-                <form>
-                  <div className="relative w-full mb-3">
-                    <label
-                      className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
-                      htmlFor="grid-password"
-                    >
-                      Username
-                    </label>
-                    <input
-                      type="email"
-                      className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                      placeholder="bashir"
-                    />
-                  </div>
+// import { userActions } from '../_actions';
 
-                  <div className="relative w-full mb-3">
-                    <label
-                      className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
-                      htmlFor="grid-password"
-                    >
-                      Password
-                    </label>
-                    <input
-                      type="password"
-                      className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                      placeholder="Password"
-                    />
-                  </div>
-                  <div>
-                  </div>
-                  <div className="text-center mt-6">
-                    <button
-                      className="bg-blue-400 text-white active:bg-blueGray-600 text-sm font-bold uppercase px-6 py-3 rounded shadow w-full hover:bg-blue-500"
-                      type="button"
-                      onClick={() => navigate(`/profile`)}
-                    >
-                      Sign In
-                    </button>
-                  </div>
-                  <div className="text-center mt-6">
-                    <button
-                      className="bg-blue-400 text-white active:bg-blueGray-600 text-sm font-bold uppercase px-6 py-3 rounded shadow w-full hover:bg-blue-500"
-                      type="button"
-                      onClick={() => navigate(`/register`)}
-                    >
-                      Register
-                    </button>
-                  </div>
-                </form>
-              </div>
-          </div>
-    </>
-  );
-}
+// class LoginPage extends React.Component {
+//     constructor(props) {
+//         super(props);
+
+//         // reset login status
+//         this.props.logout();
+
+//         this.state = {
+//             username: '',
+//             password: '',
+//             submitted: false
+//         };
+
+//         this.handleChange = this.handleChange.bind(this);
+//         this.handleSubmit = this.handleSubmit.bind(this);
+//     }
+
+//     handleChange(e) {
+//         const { name, value } = e.target;
+//         this.setState({ [name]: value });
+//     }
+
+//     handleSubmit(e) {
+//         e.preventDefault();
+
+//         this.setState({ submitted: true });
+//         const { username, password } = this.state;
+//         if (username && password) {
+//             this.props.login(username, password);
+//         }
+//     }
+
+//     render() {
+//         const { loggingIn } = this.props;
+//         const { username, password, submitted } = this.state;
+//         return (
+//             <div className="col-md-6 col-md-offset-3">
+//                 <h2>Login</h2>
+//                 <form name="form" onSubmit={this.handleSubmit}>
+//                     <div className={'form-group' + (submitted && !username ? ' has-error' : '')}>
+//                         <label htmlFor="username">Username</label>
+//                         <input type="text" className="form-control" name="username" value={username} onChange={this.handleChange} />
+//                         {submitted && !username &&
+//                             <div className="help-block">Username is required</div>
+//                         }
+//                     </div>
+//                     <div className={'form-group' + (submitted && !password ? ' has-error' : '')}>
+//                         <label htmlFor="password">Password</label>
+//                         <input type="password" className="form-control" name="password" value={password} onChange={this.handleChange} />
+//                         {submitted && !password &&
+//                             <div className="help-block">Password is required</div>
+//                         }
+//                     </div>
+//                     <div className="form-group">
+//                         <button className="btn btn-primary">Login</button>
+//                         {loggingIn &&
+//                             <img src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+//                         }
+//                         <Link to="/register" className="btn btn-link">Register</Link>
+//                     </div>
+//                 </form>
+//             </div>
+//         );
+//     }
+// }
+
+// function mapState(state) {
+//     const { loggingIn } = state.authentication;
+//     return { loggingIn };
+// }
+
+// const actionCreators = {
+//     login: userActions.login,
+//     logout: userActions.logout
+// };
+
+// const connectedLoginPage = connect(mapState, actionCreators)(LoginPage);
+// export { connectedLoginPage as LoginPage };

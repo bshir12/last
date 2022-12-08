@@ -1,13 +1,18 @@
 import React, { useState, useEffect } from 'react'
 import api from "../../../services/api";
-import TombolPenjelasan from '../buttondetail';
+import { useNavigate } from "react-router-dom";
 
-const CardJiwa = () => {
+
+const CardJiwa = ({
+  onClick,
+
+}) => {
+  const navigate = useNavigate();
   const [users, setUsers] = useState([])
  
   const getCardKJiwa = async () => {
     try {
-      const url =(`/api/v1/produk/502`);
+      const url =(`/api/v1/produk/list/502`);
       const response = await api.get(url);
       console.log(response.data);
 
@@ -22,6 +27,7 @@ const CardJiwa = () => {
 
   return (
     <>
+     <div onClick={() => navigate(`/detailproduct/${onClick}`)}>
       <div className='grid grid-rows-auto grid-cols-3 gap-4'>
         {users.map(produk => (
           <div key={produk.id}>
@@ -36,7 +42,7 @@ const CardJiwa = () => {
           </div>
         ))}
       </div>
-      <TombolPenjelasan/>
+      </div>
     </>
   )
 };

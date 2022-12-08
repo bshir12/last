@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: 'https://hardi-jdt10.herokuapp.com'
+  baseURL: 'http://localhost:8080/'
 });
 
 export default api
