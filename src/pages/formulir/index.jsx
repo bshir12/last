@@ -40,7 +40,7 @@ export default class Formulir extends Component {
         localStorage.setItem("nik", this.state.nik)
         localStorage.setItem("asuransibank", this.state.asuransibank)
 
-        window.location.href=('/payment');
+        window.location.href=('/profile');
       })
       .catch(error => {
         console.log(error);

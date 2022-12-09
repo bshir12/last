@@ -5,42 +5,10 @@ import api from "../../../services/api";
 import CardJiwa from "../card-jiwa";
 
 const TabList = () => {
-    const [cities, setCities] = useState([]);
-    const [products, setProducts] = useState([]);
     const [openTab, setOpenTab] = React.useState(1);
-    const fetchCities = async () => {
-        try {
-            const url = "/api/v1/city";
-            const response = await api.get(url);
-            const payload = [...response?.data?.data?.cities];
-            console.log(payload);
-            setCities(payload || []);
-        } catch (error) {
-            alert(error);
-        }
-    };
-    const fetchProducts = async () => {
-        try {
-            const url = "/api/v1/products";
-            const response = await api.get(url);
-            const payload = [...response?.data?.data?.products];
-            console.log(payload);
-            setProducts(payload || []);
-        } catch (error) {
-            alert(error);
-        }
-    };
-
-    useEffect(() => {
-        fetchCities();
-        fetchProducts();
-    }, []);
     return (
         <>
             <div className="flex justify-center m-8 rounded-lg h-auto">
-                {cities.map((item) => {
-                    return <span key={item?.id}> {item?.name}</span>;
-                })}
                 <div className="text-center ">
                     <ul
                         className="mb-0 list-none flex-wrap pt-3 pb-4 flex-row"

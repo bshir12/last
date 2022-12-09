@@ -1,20 +1,39 @@
 
-import React  from "react";
-import { Header, Footer, BayarMandiri, BayarBca, BayarBri,Upload, TombolKembali} from "@components";
-import { CopyToClipboard } from "react-copy-to-clipboard";
-import { useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Header, Footer} from "@components";
+import { useNavigate, useParams } from "react-router-dom";
+import api from "../../services/api";
 
 const Payment = () => {
-  const [openTab, setOpenTab] = React.useState(1);
-  const navigate = useNavigate(9);
-  /*const [copyText, setCopyText] = React.useState();
-  /*const handleCopy=()=>{
-    navigator.clipboard.witerText(copyText)
-    alert("Copied")}
-  */
+  const [openTab, setOpenTab] = React.useState();
+  const [product, setProduct] = useState({});
+  const navigate = useNavigate();
+  const params = useParams();
+
+  const fetchProduct = async (id) => {
+    try {
+        const url = `/api/v1/produk/${id}`;
+        const response = await api.get(url);
+        const payload = { ...response?.data };
+        console.log(payload);
+        setProduct(payload || {});
+    } catch (error) {
+        alert(error);
+    }
+};
+
+useEffect(() => {
+    if (params.id) {
+        fetchProduct(params.id);
+    }
+}, [params.id]);
+
   return (
     <>
       <Header />
+      <div className="text-center font-semibold text-2xl my-12 shadow-md mx-56">
+        <p>Rp.{product.harga},-</p>
+      </div>
       <div className="flex flex-wrap justify-center">
         <ul
           className="flex list-none flex-wrap pt-3 pb-4 flex-row"
@@ -83,20 +102,20 @@ const Payment = () => {
             <div className="tab-content tab-space">
               <div className={openTab === 1 ? "block" : "hidden"} id="link1">
                 <div className="border rounded-md mx-20 shadow-xl">
-                  <p className="text-4xl">127 987 3211</p>
-                  <Upload/>
+                  <p className="text-4xl">014{product.harga}{product.id}</p>
+                  
                 </div>
               </div>
               <div className={openTab === 2 ? "block" : "hidden"} id="link2">
                 <div className="border rounded-md mx-20 shadow-xl">
-                  <p className="text-4xl">9981 356 817 113</p>
-                  <Upload/>
+                  <p className="text-4xl">002{product.harga}{product.id}</p>
+                  
                 </div>
               </div>
               <div className={openTab === 3 ? "block" : "hidden"} id="link3">
                 <div className="border rounded-md mx-20 shadow-xl">
-                  <p className="text-4xl">567 227 999 732 456</p>
-                  <Upload/>
+                  <p className="text-4xl">008{product.harga}{product.id}</p>
+                  
                 </div>
               </div>
             </div>
@@ -105,9 +124,9 @@ const Payment = () => {
       </div>
       <div>
         <button 
-          className="bg-blue-400 text-white active:bg-blueGray-600 text-sm font-bold uppercase px-6 py-3 rounded shadow w-full hover:bg-blue-500"
+          className="bg-blue-400 text-white active:bg-blueGray-600 text-sm font-bold uppercase px-6 py-3 rounded shadow w-96 justify-center hover:bg-blue-500"
           type="button"
-          onClick={() => navigate('/profile')}
+          onClick={() => navigate('/formulir')}
           >
           Selesai
           </button>
