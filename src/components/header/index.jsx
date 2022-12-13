@@ -17,7 +17,7 @@ const Header = () => {
           <ul className="flex mt-3 mr-3">
             <li className="mr-5">
               <Link to={"/listproduct"}>
-              <button className="border text-black py-1 px-6 rounded-md hover:bg-orange-700 hover:text-white  ">
+              <button className="border text-black py-1 px-6 rounded-md hover:bg-blue-900 hover:text-white  ">
                 List Product
               </button>
               </Link>
@@ -25,7 +25,7 @@ const Header = () => {
             </li>
             <li className="mr-7">
               <Link to={"/login"}>
-              <button className="bg-orange-500 text-white py-1 px-6 rounded-md hover:bg-orange-700">Login</button>
+              <button className="bg-blue-900 text-white py-1 px-6 rounded-md hover:bg-blue-900">Login</button>
               </Link>
             </li>
           </ul>

@@ -4,7 +4,7 @@ import { Carousel } from "antd";
 const Landing = () => {
   return (
     <>
-      <div className="md:m-8 bg-orange-500 p-3 rounded-lg font-normal ">
+      <div className="md:m-8 bg-blue-900 p-3 rounded-lg font-normal ">
         <div className=" text-2xl font-bold text-white my-5px">
           <div className=" m-2 md:w-auto grid grid-cols-2 mx-auto  ">
             <div className="#">

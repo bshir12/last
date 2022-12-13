@@ -8,7 +8,7 @@ const PenjelasanProduct = () => {
   const navigate = useNavigate();
   return (
     <>
-      <div className="py-8 px-16 m-32 rounded-lg text-white mx-14 shadow-md bg-orange-500">
+      <div className="py-8 px-16 m-32 rounded-lg text-white mx-14 shadow-md bg-blue-900">
       <div>
                 <button className="border border-white text-white mx-auto mb-3 px-10 py-2 rounded-lg  hover:bg-white hover:text-black"
                 type="button"
