@@ -6,7 +6,7 @@ const Profile = () => {
   return (
     <>
       <Header />
-      <div className="bg-orange-500 m-6 rounded-lg h-60">
+      <div className="bg-blue-900 m-6 rounded-lg h-60">
         <div className="flex justify-left">
           <img
             className=" w-48 h-48 ml-12 mt-5 rounded-full border "
@@ -72,7 +72,7 @@ const Profile = () => {
       </div>
       
       <div>
-        <div className="shadow-2xl border-b-2 m-5 rounded-lg text-center font-bold text-2xl">
+        <div className=" rounded-lg text-center font-bold text-2xl mt-20 font-[poppins]">
         Produk Asuransi Anda
         </div>
         <CardProduk />

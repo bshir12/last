@@ -9,7 +9,7 @@ const Product = () => {
                 <div className=' text-center text-4xl font-[poppins] mt-24 my-6 '>
                     <h2>Pilih Produk Sesuai Kebutuhan Kamu</h2>
                 </div>
-                <div className='flex row list-none justify-center bg-orange-500 rounded-xl'>
+                <div className='flex row list-none justify-center bg-blue-900 rounded-xl'>
                     <div className='p1'>
                         <li className='bg-white box-decoration-clone md:w-44 md:h-48 md:m-5 w-20 h-32 rounded-xl shadow-2xl' onClick={() => navigate(`/listproduct`)}>
                             <div className='w-14 h-8 md:ml-16 ml-3 my-8'>

@@ -3,17 +3,17 @@ import React from 'react'
 const Transaksi = () => {
   return (
     <>
-    <div className='bg-orange-500 py-6 px-16 m-32 rounded-lg text-white mx-14'>
-        <h1 className='text-2xl font-sans text-white'>Transaksi</h1>
+    <div className='bg-blue-900 py-6 px-16 m-32 rounded-lg text-white mx-14'>
+        <h1 className='text-2xl font-[poppins] text-white '>Transaksi</h1>
         <div className='font-sans m-3'>
         <table className="rounded-xl border-white w-full text-slate-600">
           <thead className='bg-slate-200 '>
             <tr className='border rounded-lg '>
-              <th className=" py-2 px-2 ">No.</th>
-              <th className=" py-2 px-2">Description</th>
-              <th className=" py-2 px-2 ">Harga</th>
-              <th className=" py-2 px-2  ">Bank</th>
-              <th className=" py-2 px-2  "></th>
+              <th className=" py-2 px-2 font-[poppins] ">No.</th>
+              <th className=" py-2 px-2 font-[poppins] ">Description</th>
+              <th className=" py-2 px-2 font-[poppins] ">Harga</th>
+              <th className=" py-2 px-2 font-[poppins]  ">Bank</th>
+              <th className=" py-2 px-2 font-[poppins]  "></th>
             </tr>
           </thead>
           
